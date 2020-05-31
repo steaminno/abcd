@@ -1,0 +1,89 @@
+{{define "title"}}Create Order Order{{end}}
+{{define "head"}}{{end}}
+{{ define "content" }}
+  {{ template "Header" }}
+    
+<div class="card">
+  <h3 class="card-header">Adcionar Cliente</h3>
+  <div class="card-body">
+
+    <form method="POST" action="/client/store" enctype="multipart/form-data">
+       <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+ 
+        <div class="form-group row">
+            <div class="col-md-3">
+               <label> Pedido </label>
+            </div>
+
+            <div class="col-md-9">
+               <input class="form-control" type="number" name="pedido" value= readonly />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-3">
+               <label> First name </label>
+            </div>
+
+            <div class="col-md-9">
+               <input class="form-control" type="text" name="fname" />
+            </div>
+          </div>
+
+          <div class="form-group row">
+           <div class="col-md-3">
+            <label> Last name </label>
+           </div>  
+           <div class="col-md-9">
+            <input class="form-control" type="text" name="lname" />
+            </div>
+          </div>
+
+           <div class="form-group row">
+            <div class="col-md-3">
+              <label> CellNumber</label>
+            </div>
+            <div class="col-md-9">
+              <input class="form-control" type="tel" name="cellnumber" />
+            </div>
+           
+          </div>
+
+          <div class="form-group row">
+          <div class="col-md-3">
+            <label> Address</label>
+          </div>
+          <div class="col-md-9">
+            <input class="form-control" type="text" name="address" />
+          </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-3">
+               <label> Status </label>
+            </div>
+
+            <div class="col-md-9">
+               <input class="form-control" type="text" name="status" value="ativo" readonly/>
+            </div>
+          </div>
+
+      <div class="form-group row">
+      <div class="col-md-3">
+      <label> Obs </label>
+      </div>
+      <div class="col-md-9">
+      <textarea type="text" class="form-control" name="obs" value="seu texto aqui"></textarea><br /><br />
+      </div>
+      </div>
+       <button type="submit" class="btn btn-info" value="Cadastrar">Cadastrar</button> 
+                </div>
+            </div>
+            <input type="hidden" name="token" value="{{.token}}">
+    </form>
+      </div>
+</div>
+  {{ template "Footer" }}
+{{ end }}
